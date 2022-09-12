@@ -7,7 +7,7 @@ on:
 jobs:
   check:
     name: Checking required reviews
-    runs-on: label-4  
+    runs-on: self-hosted  
 
     # GitHub should provide a "pull_request_review_target", but they don't and
     # the action will fail if run on a forked PR.
