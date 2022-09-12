@@ -21,7 +21,8 @@ jobs:
           requirements: |
             - paths: unmatched
               teams:
-                - "leads"
+                - "@yash-sharma-robomq"
+                - "@yash9575"
           status: Required Review
           fail: true
-          token: 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
+          token: ${{ secrets.SOME_TOKEN }}
