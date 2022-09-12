@@ -24,4 +24,4 @@ jobs:
                 - leads
           status: Required Review
           fail: true
-          token: ${{ secrets.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 }}
+          token: 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
