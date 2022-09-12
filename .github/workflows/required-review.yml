@@ -21,7 +21,7 @@ jobs:
           requirements: |
             - paths: unmatched
               teams:
-                - leads
+                - "leads"
           status: Required Review
           fail: true
           token: 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
