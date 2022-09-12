@@ -25,4 +25,4 @@ jobs:
                 - "@yash9575"
           status: Required Review
           fail: true
-          token: ${{ secrets.SOME_TOKEN }}
+          token: ${{ github.token }}
