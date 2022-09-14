@@ -17,8 +17,7 @@ jobs:
           requirements: |
             - paths: unmatched
               teams:
-                - "@yash-sharma-robomq"
-                - "@yash9575"
+                - leads
           status: Required Review
           fail: true
           token: ${{ github.token }}
