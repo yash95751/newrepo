@@ -25,11 +25,25 @@ jobs:
           status: Required Review
           fail: true
           token: ${{ github.token }}
-      - name: Fetch API Data
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          curl --request GET \
-          --url "https://api.github.com/orgs/yash95751/teams" \
-          --header "Accept: application/vnd.github.v3+json" \
-          --header "Authorization: Bearer $GH_TOKEN"
+      - name: Fetch API Data 📦
+        uses: JamesIves/fetch-api-data-action@v2
+        with:
+          endpoint: http://api.github.com
+          configuration: '{ "method": "GET", "headers": {"Authorization": "Bearer ${{ secrets.GITHUB_TOKEN }}"} }'
+    
+          
+          
+          
+          
+          
+          
+          
+          
+      #- name: Fetch API Data
+        #env:
+         # GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        #run: |
+          #curl --request GET \
+          #--url "https://api.github.com/orgs/yash95751/teams" \
+          #--header "Accept: application/vnd.github.v3+json" \
+          #--header "Authorization: Bearer $GH_TOKEN"
