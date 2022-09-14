@@ -25,15 +25,8 @@ jobs:
           
       - name: fetch api second
         run: |
-          response = "$( gh api graphql -F owner=$OWNER -F name=$REPO -f query='
-            query($name: String!, $owner: String!) {
-              repository(owner: $owner, name: $name) {
-                issues(states:OPEN){
-                  totalCount
-                }
-              }
-            }
-          ' --jq '.data.repository.issues.totalCount')"
+          curl -H "Authorization: bearer token" -H "Accept: application/vnd.github.v4.idl" \
+          https://api.github.com/graphql
           
           echo 'hii...'$response
           
