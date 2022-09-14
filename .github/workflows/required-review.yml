@@ -21,7 +21,7 @@ jobs:
           requirements: |
             - paths: unmatched
               teams:
-                - "@yash95751/leads"
+                - "yash95751/leads"
           status: Required Review
           fail: true
           token: ${{ github.token }}
