@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - run: echo "${{github.event.pull_request.head.repo.full_name}}"
-      - run: echo "${{github.repository}}"
+      - run: echo "${{github.organisation}}"
       - name: auto action
         uses: Automattic/action-required-review@v3
         with:
