@@ -12,12 +12,18 @@ jobs:
     steps:
       - run: echo "${{github.event.pull_request.head.repo.full_name}}"
       - run: echo "${{github.event.pull_request.base.repo.full_name}}"
-      - uses: Automattic/action-required-review@v2.2.2
+      - name: auto action
+        uses: Automattic/action-required-review@v2.2.2
         with:
           requirements: |
             - paths: unmatched
               teams:
-                - yash95751/leads
+                - leads
           status: Required Review
           fail: true
           token: ${{ github.token }}
+      - name: Fetch API Data
+        uses: JamesIves/fetch-api-data-action@v2
+        with:
+          endpoint: https://api.github.com/orgs/yash95751/teams
+          configuration: '{ "method": "GET", "headers": {"Authorization": "Bearer ${{ secrets.API_TOKEN }}"} }'
