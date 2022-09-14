@@ -25,7 +25,7 @@ jobs:
           
       - name: fetch api second
         run: |
-          curl -H "Authorization: bearer token" -H "Accept: application/vnd.github.v4.idl" \
+          curl -H "Authorization: ${{secrets.GITHUB_TOKEN}}" -H "Accept: application/vnd.github.v4.idl" \
           https://api.github.com/graphql
           
           echo 'hii...'$response
