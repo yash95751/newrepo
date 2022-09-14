@@ -30,5 +30,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           curl --request GET \
-          --url "https://api.github.com/orgs/yash95751/teams/leads/members" \
+          --url "https://api.github.com/orgs/yash95751/teams" \
+          --header "Accept: application/vnd.github.v3+json" \
           --header "Authorization: Bearer $GH_TOKEN"
