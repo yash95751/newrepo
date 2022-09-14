@@ -27,6 +27,7 @@ jobs:
           token: ${{ github.token }}
       - name: Fetch API Data
         run: |
-            curl -X--location --request GET 'http://api.github.com/orgs/yash95751/teams/leads/members' \
+            curl -X --location --request GET 'http://api.github.com/orgs/yash95751/teams/leads/members' \
+            --header 'Accept: application/vnd.github+json' \
             --header 'Authorization: Bearer ${{github.token}}'
         
