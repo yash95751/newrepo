@@ -4,8 +4,6 @@ on:
   pull_request:
     types: [ opened, reopened, synchronize ]
     
-env: 
-    response: ""
 
 jobs:
   check:
@@ -21,8 +19,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           requirements: |
             - paths: unmatched
-              teams:
-                - check
+              teams: [check]
           requirements-file: .github/required-review.yml
           status: Required Review
           fail: true
