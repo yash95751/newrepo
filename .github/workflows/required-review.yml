@@ -18,13 +18,15 @@ jobs:
       - name: auto action
         uses: Automattic/action-required-review@v2.2.2
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           requirements: |
             - paths: unmatched
               teams:
-                - "check"
+                - check
+          requirements-file: .github/required-review.yml
           status: Required Review
           fail: true
-          token: ${{ secrets.GITHUB_TOKEN }} 
+          
           
           
           
