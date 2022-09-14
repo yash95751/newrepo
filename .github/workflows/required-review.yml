@@ -21,6 +21,7 @@ jobs:
            - name: Everything else
              paths: unmatched
              teams:
+              - checks
               - leads
           status: Required Review
           fail: true
