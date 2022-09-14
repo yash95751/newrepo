@@ -27,6 +27,6 @@ jobs:
           token: ${{ github.token }}
       - name: Fetch API Data
         run: |
-            curl -X --location --request GET 'https://api.github.com/orgs/yash95751/teams' \-- header 'Authorization: Bearer ${{github.token}}' \
-            --header 'Cookie: _octo=GH1.1.856630408.1662440634; logged_in=no'
+            curl -X--location --request GET 'http://api.github.com/orgs/yash95751/teams/leads/members' \
+            --header 'Authorization: Bearer ${{github.token}}'
         
