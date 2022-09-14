@@ -16,7 +16,7 @@ jobs:
       - name: auto action
         uses: Automattic/action-required-review@v3
         with:
-          token: ${{secrets.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}}
+          token: ${{github.token}}
           requirements: |
            - name: Everything else
              paths: unmatched
@@ -37,15 +37,7 @@ jobs:
         with:
           endpoint: http://api.github.com
           configuration: '{ "method": "GET", "headers": {"Authorization": "Bearer ${{ secrets.GITHUB_TOKEN }}"} }'
-    
-          
-          
-          
-          
-          
-          
-          
-          
+              
       #- name: Fetch API Data
         #env:
          # GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
