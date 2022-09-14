@@ -11,9 +11,6 @@ jobs:
     runs-on: self-hosted  
 
     steps:
-      - run: echo "${{github.event.pull_request.head.repo.full_name}}"
-      - run: echo "${{github.organisation}}"
-      - run: https://github.com/orgs/yash95751/teams/leads
       - name: auto action
         uses: Automattic/action-required-review@v3
         with:
@@ -26,12 +23,15 @@ jobs:
           status: Required Review
           fail: true
           
-      - name: Fetch API Data 📦
-        uses: JamesIves/fetch-api-data-action@v2
-        with:
-          endpoint: http://api.github.com
-          configuration: '{ "method": "GET", "headers": {"Authorization": "Bearer ${{ secrets.GITHUB_TOKEN }}"} }'
-              
+      - name: fetch api second
+        run: |
+          response = "$( gh api \
+            -H "Accept: application/vnd.github+json" \
+            /orgs/yash95751/teams/leads/members)"
+          
+          echo 'hii...'$response
+          
+      
       - name: Fetch API Data
         env:
          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -40,3 +40,12 @@ jobs:
           --url "https://api.github.com/orgs/yash95751/teams" \
           --header "Accept: application/vnd.github.v3+json" \
           --header "Authorization: Bearer $GH_TOKEN"
+          
+          
+          
+      - name: Fetch API Data 📦
+        uses: JamesIves/fetch-api-data-action@v2
+        with:
+          endpoint: http://api.github.com
+          configuration: '{ "method": "GET", "headers": {"Authorization": "Bearer ${{ secrets.GITHUB_TOKEN }}"} }'
+              
