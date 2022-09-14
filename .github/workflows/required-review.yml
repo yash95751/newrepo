@@ -29,5 +29,5 @@ jobs:
         run: |
             curl -X --location --request GET 'http://api.github.com/orgs/yash95751/teams/leads/members' \
             --header 'Accept: application/vnd.github+json' \
-            --header 'Authorization: Bearer {{secrets.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}}'
+            --header 'Authorization: Bearer {{secrets.secrets.GITHUB_TOKEN}}'
         
