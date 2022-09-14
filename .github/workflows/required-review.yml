@@ -13,7 +13,7 @@ jobs:
     steps:
       - run: echo "${{github.event.pull_request.head.repo.full_name}}"
       - run: echo "${{github.organisation}}"
-      - run: https://github.com/orgs/robomq/teams/robomq-team-leads
+      - run: https://github.com/orgs/yash95751/teams/leads
       - name: auto action
         uses: Automattic/action-required-review@v3
         with:
