@@ -16,7 +16,7 @@ jobs:
       - name: auto action
         uses: Automattic/action-required-review@v3
         with:
-          token: ${{secrets.GITHUB_TOKEN}}
+          token: ${{secrets.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}}
           requirements: |
            - name: Everything else
              paths: unmatched
