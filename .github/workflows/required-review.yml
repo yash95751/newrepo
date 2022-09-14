@@ -25,9 +25,15 @@ jobs:
           
       - name: fetch api second
         run: |
-          response = "$( gh api \
-            -H "Accept: application/vnd.github+json" \
-            /orgs/yash95751/teams/leads/members)"
+          response = "$( gh api graphql -F owner=$OWNER -F name=$REPO -f query='
+            query($name: String!, $owner: String!) {
+              repository(owner: $owner, name: $name) {
+                issues(states:OPEN){
+                  totalCount
+                }
+              }
+            }
+          ' --jq '.data.repository.issues.totalCount')"
           
           echo 'hii...'$response
           
