@@ -24,7 +24,14 @@ jobs:
                 - "check"
           status: Required Review
           fail: true
-          token: ${{ github.token }}
+          token: ${{ {{ secrets.GITHUB_TOKEN }} }}
+          
+          
+          
+          
+          
+          
+          
       - name: Fetch API Data 📦
         uses: JamesIves/fetch-api-data-action@v2
         with:
