@@ -3,6 +3,9 @@ on:
   pull_request_review:
   pull_request:
     types: [ opened, reopened, synchronize ]
+    
+env: 
+    response: ""
 
 jobs:
   check:
@@ -18,12 +21,12 @@ jobs:
           requirements: |
             - paths: unmatched
               teams:
-                - leads
+                - "@yash-sharma-robomq"
           status: Required Review
           fail: true
           token: ${{ github.token }}
       - name: Fetch API Data
-        uses: JamesIves/fetch-api-data-action@v2
-        with:
-          endpoint: https://api.github.com/orgs/yash95751/teams
-          configuration: '{ "method": "GET", "headers": {"Authorization": "Bearer ${{ secrets.API_TOKEN }}"} }'
+        run: |
+            curl -X --location --request GET 'https://api.github.com/orgs/yash95751/teams' \-- header 'Authorization: Bearer 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' \
+            --header 'Cookie: _octo=GH1.1.856630408.1662440634; logged_in=no'
+        
