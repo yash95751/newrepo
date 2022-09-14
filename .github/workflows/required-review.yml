@@ -14,13 +14,14 @@ jobs:
       - run: echo "${{github.event.pull_request.head.repo.full_name}}"
       - run: echo "${{github.event.pull_request.base.repo.full_name}}"
       - name: auto action
-        uses: Automattic/action-required-review@v2.2.2
+        uses: Automattic/action-required-review@v3
         with:
           token: ${{secrets.GITHUB_TOKEN}}
           requirements: |
-            - paths: unmatched
-            - teams:
-                - check
+           - name: Everything else
+             paths: unmatched
+             teams:
+              - leads
           status: Required Review
           fail: true
           
