@@ -27,7 +27,10 @@ jobs:
           fail: true
       
       - name: Fetch API Data
+        env: response
         run: |
-            curl --location --request GET 'https://alpha.robomq.io/hire2retire/adp_mock_server/api/v2/workers' \
+            response = ${{curl --location --request GET 'https://alpha.robomq.io/hire2retire/adp_mock_server/api/v2/workers' \
               --header 'Content-Type: application/x-www-form-urlencoded' \
-              --header 'Authorization: Bearer 327c6639-453b-4821-a8c4-97df4eccb15f'
+              --header 'Authorization: Bearer 327c6639-453b-4821-a8c4-97df4eccb15f'}}
+            
+            echo $response
