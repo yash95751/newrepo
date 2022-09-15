@@ -11,7 +11,7 @@ jobs:
     runs-on: self-hosted  
 
     steps:
-     # - name: auto action
+      - name: auto action
       - uses: Automattic/action-required-review@v3
         with:
           token: ${{github.token}}
@@ -31,14 +31,12 @@ jobs:
        #   echo 'hii...'$response
           
       
-    #  - name: Fetch API Data
-     #   env:
-      #   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-       # run: |
-        #  curl -k --request GET \
-         # --url "https://api.github.com/orgs/yash95751/teams" \
-          #--header "Accept: application/vnd.github.v3+json" \
-          #--header "Authorization: Bearer $GH_TOKEN"
+      - name: Fetch API Data
+        run: |
+            curl -k --location --request GET 'https://api.github.com/orgs/yash95751/teams/leads/members' \
+            --header 'Accept: application/vnd.github+json' \
+            --header 'Authorization: Bearer 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' \
+            --header 'Cookie: _octo=GH1.1.856630408.1662440634; logged_in=no'
           
           
           
