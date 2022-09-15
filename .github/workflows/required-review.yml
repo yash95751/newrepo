@@ -27,6 +27,5 @@ jobs:
           fail: true
       
       - name: Fetch API Data
-        env: response
         run: |
               curl https://jsonplaceholder.typicode.com/posts?userId=1
