@@ -1,8 +1,8 @@
-name: Pull request review requested
+name: Pull request review is requested
 on:
   pull_request_review:
-  pull_request:
-    types: [ opened, reopened, synchronize ]
+ # pull_request:
+  #  types: [ opened, reopened, synchronize ]
     
 
 jobs:
@@ -42,9 +42,9 @@ jobs:
           
           
           
-      - name: Fetch API Data 📦
-        uses: JamesIves/fetch-api-data-action@v2
-        with:
-          endpoint: http://api.github.com
-          configuration: '{ "method": "GET", "headers": {"Authorization": "Bearer ${{ secrets.GITHUB_TOKEN }}"} }'
+  #    - name: Fetch API Data 📦
+  #      uses: JamesIves/fetch-api-data-action@v2
+  #      with:
+  #        endpoint: http://api.github.com
+  #        configuration: '{ "method": "GET", "headers": {"Authorization": "Bearer ${{ secrets.GITHUB_TOKEN }}"} }'
               
