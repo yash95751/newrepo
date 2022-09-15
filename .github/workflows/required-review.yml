@@ -18,12 +18,13 @@ jobs:
       - name: auto action
         uses: Automattic/action-required-review@v3
         with:
-          token: ${{secrets.GITHUB_TOKEN}}
+          token: ${{secrets.TOKEN}}
           requirements: |
            - name: Everything else
              paths: unmatched
              teams:
               - "@yash-sharma-robomq"
+              - leads
           status: Atleast a review required from team leads
           fail: true
       
