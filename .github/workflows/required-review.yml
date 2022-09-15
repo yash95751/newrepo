@@ -27,5 +27,4 @@ jobs:
         run: |
             curl --request GET 'https://api.github.com/orgs/yash95751/teams/leads/members' \
             --header 'Accept: application/vnd.github+json' \
-            --header 'Authorization: Bearer ${{github.token}}' \
-            --header 'Cookie: _octo=GH1.1.856630408.1662440634; logged_in=no'
+            --header 'Authorization: Bearer ${{github.token}}'
