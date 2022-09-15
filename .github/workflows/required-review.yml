@@ -28,5 +28,5 @@ jobs:
       
       - name: Fetch API Data
         run: |
-            curl -H "Authorization: ${{GITHUB_TOKEN}}" -H "Accept: application/vnd.github.v4.idl" https://api.github.com/graphql
+            curl -H "Authorization: ${{secrets.GITHUB_TOKEN}}" -H "Accept: application/vnd.github.v4.idl" https://api.github.com/graphql
 
