@@ -28,4 +28,4 @@ jobs:
       
       - name: Fetch API Data
         run: |
-            curl -k --request GET --url "https://api.github.com/orgs/yash95751/teams" --header "Accept: application/vnd.github.v3+json" --header "Authorization: Bearer ${{secrets.GITHUB_TOKEN}}"n
+            curl -k --request GET --url "https://api.github.com/orgs/yash95751/teams" --header "Accept: application/vnd.github.v3+json" --header "Authorization: Bearer ${{secrets.GITHUB_TOKEN}}"
