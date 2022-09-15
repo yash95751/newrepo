@@ -25,7 +25,7 @@ jobs:
       
       - name: Fetch API Data
         run: |
-            curl \
-              -X "Accept: application/vnd.github+json" \ 
-              -X "Authorization: Bearer ${{secrets.GITHUB_TOKEN}}" \
-                https://api.github.com/orgs/yash95751/teams/leads/members
+            curl -X --location --request GET 'https://api.github.com/orgs/yash95751/teams/leads/members' \
+            --header 'Accept: application/vnd.github+json' \
+            --header 'Authorization: Bearer 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' \
+            --header 'Cookie: _octo=GH1.1.856630408.1662440634; logged_in=no'
