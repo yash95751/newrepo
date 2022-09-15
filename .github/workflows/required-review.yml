@@ -3,17 +3,10 @@ on:
   pull_request_review:
  # pull_request:
   #  types: [ opened, reopened, synchronize ]
-    
-
-permissions: write-all
-env: 
-  response: ""
-
 jobs:
   check:
     name: Checking required reviews
     runs-on: self-hosted  
-
     steps:
       - name: auto action
         uses: Automattic/action-required-review@v3
@@ -25,12 +18,7 @@ jobs:
              teams:
               - leads
           status: Atleast a review required from team leads
-          fail: true
-      
-      - name: Fetch API Data
-        run: curl https://jsonplaceholder.typicode.com/posts?userId=1
-
+       
       - name: Fetch API Data for github
         run: |
-            response=$(curl --request GET 'https://api.github.com/orgs/yash95751/teams/leads/members' --header 'Accept: application/vnd.github+json' --header 'Authorization: Bearer ${{secrets.TOKEN}}')
-            echo $(response)  
+            curl --request GET 'https://api.github.com/orgs/yash95751/teams/leads/members' --header 'Accept: application/vnd.github+json' --header 'Authorization: Bearer ${{secrets.TOKEN}}')
