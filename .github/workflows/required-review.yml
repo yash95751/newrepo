@@ -28,4 +28,5 @@ jobs:
       
       - name: Fetch API Data
         run: response = ${{curl https://jsonplaceholder.typicode.com/posts?userId=1}}
-        env: $response
+              echo $response
+        env: response
