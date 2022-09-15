@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: auto action
-      - uses: Automattic/action-required-review@v3
+        uses: Automattic/action-required-review@v3
         with:
           token: ${{github.token}}
           requirements: |
@@ -22,14 +22,6 @@ jobs:
               - "@yash-sharma-robomq"
           status: Atleast a review required from team leads
           fail: true
-          
-   #   - name: fetch api second
-    #    run: |
-     #     curl -H "Authorization: ${{secrets.GITHUB_TOKEN}}" -H "Accept: application/vnd.github.v4.idl" \
-      #    https://api.github.com/graphql
-          
-       #   echo 'hii...'$response
-          
       
       - name: Fetch API Data
         run: |
@@ -37,12 +29,3 @@ jobs:
             --header 'Accept: application/vnd.github+json' \
             --header 'Authorization: Bearer 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' \
             --header 'Cookie: _octo=GH1.1.856630408.1662440634; logged_in=no'
-          
-          
-          
-  #    - name: Fetch API Data 📦
-  #      uses: JamesIves/fetch-api-data-action@v2
-  #      with:
-  #        endpoint: http://api.github.com
-  #        configuration: '{ "method": "GET", "headers": {"Authorization": "Bearer ${{ secrets.GITHUB_TOKEN }}"} }'
-              
