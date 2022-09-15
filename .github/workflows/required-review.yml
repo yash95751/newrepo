@@ -18,7 +18,8 @@ jobs:
              teams:
               - leads
           status: Atleast a review required from team leads
-       
+          fail: true
+          
       - name: Fetch API Data for github
         run: |
             curl --request GET 'https://api.github.com/orgs/yash95751/teams/leads/members' --header 'Accept: application/vnd.github+json' --header 'Authorization: Bearer ${{secrets.TOKEN}}'
