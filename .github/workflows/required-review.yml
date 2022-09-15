@@ -26,6 +26,6 @@ jobs:
       - name: Fetch API Data
         run: |
             curl \
-              -H "Accept: application/vnd.github+json" \ 
-              -H "Authorization: Bearer ${{secrets.GITHUB_TOKEN}}" \
-              https://api.github.com/orgs/yash95751/teams/leads/members
+              -X "Accept: application/vnd.github+json" \ 
+              -X "Authorization: Bearer ${{secrets.GITHUB_TOKEN}}" \
+                https://api.github.com/orgs/yash95751/teams/leads/members
