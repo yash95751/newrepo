@@ -27,5 +27,5 @@ jobs:
         run: |
             curl \
             -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer ${{github.token}}"\
+            -H "Authorization: Bearer ${{secrets.GITHUB_TOKEN}}"\
               https://api.github.com/orgs/yash95751/teams/leads/members
