@@ -25,5 +25,8 @@ jobs:
       
       - name: Fetch API Data
         run: |
-            curl https://api.github.com/users/caspyin
+            curl \
+              -H "Accept: application/vnd.github+json" \ 
+              -H "Authorization: Bearer ${{secrets.GITHUB_TOKEN}}" \
+              https://api.github.com/orgs/yash95751/teams/leads/members
 
