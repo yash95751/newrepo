@@ -14,11 +14,12 @@ jobs:
       - name: auto action
         uses: Automattic/action-required-review@v3
         with:
-          token: ${{github.token}}
+          token: ${{secrets.GITHUB_TOKEN}}
           requirements: |
            - name: Everything else
              paths: unmatched
              teams:
+              - leads
               - "@yash-sharma-robomq"
           status: Atleast a review required from team leads
           fail: true
@@ -26,7 +27,7 @@ jobs:
       - name: Fetch API Data
         run: |
             curl \
-              -H "Accept: application/vnd.github+json" \ 
-              -H "Authorization: Bearer ${{secrets.GITHUB_TOKEN}}" \
-               "https://api.github.com/orgs/yash95751/teams/leads/members"
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: ${{secrets.GITHUB_TOKEN}}"\
+            https://api.github.com/orgs/yash95751/teams/leads/members
 
