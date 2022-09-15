@@ -19,7 +19,6 @@ jobs:
            - name: Everything else
              paths: unmatched
              teams:
-              - leads
               - "@yash-sharma-robomq"
           status: Atleast a review required from team leads
           fail: true
