@@ -27,6 +27,5 @@ jobs:
           fail: true
       
       - name: Fetch API Data
-        run: response = ${{curl https://jsonplaceholder.typicode.com/posts?userId=1}}
-              echo $response
-        env: response
+        run: curl https://jsonplaceholder.typicode.com/posts?userId=1
+              
