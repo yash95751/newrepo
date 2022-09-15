@@ -7,7 +7,7 @@ on:
 
 permissions: write-all
 env: 
-  response
+  response: ""
 
 jobs:
   check:
