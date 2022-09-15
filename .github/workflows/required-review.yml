@@ -1,4 +1,4 @@
-name: Required review check
+name: Pull request review requested
 on:
   pull_request_review:
   pull_request:
@@ -11,8 +11,8 @@ jobs:
     runs-on: self-hosted  
 
     steps:
-      - name: auto action
-        uses: Automattic/action-required-review@v3
+     # - name: auto action
+      - uses: Automattic/action-required-review@v3
         with:
           token: ${{github.token}}
           requirements: |
@@ -20,25 +20,25 @@ jobs:
              paths: unmatched
              teams:
               - "@yash-sharma-robomq"
-          status: Required Review
+          status: Atleast a review required from team leads
           fail: true
           
-      - name: fetch api second
-        run: |
-          curl -H "Authorization: ${{secrets.GITHUB_TOKEN}}" -H "Accept: application/vnd.github.v4.idl" \
-          https://api.github.com/graphql
+   #   - name: fetch api second
+    #    run: |
+     #     curl -H "Authorization: ${{secrets.GITHUB_TOKEN}}" -H "Accept: application/vnd.github.v4.idl" \
+      #    https://api.github.com/graphql
           
-          echo 'hii...'$response
+       #   echo 'hii...'$response
           
       
-      - name: Fetch API Data
-        env:
-         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          curl -k --request GET \
-          --url "https://api.github.com/orgs/yash95751/teams" \
-          --header "Accept: application/vnd.github.v3+json" \
-          --header "Authorization: Bearer $GH_TOKEN"
+    #  - name: Fetch API Data
+     #   env:
+      #   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+       # run: |
+        #  curl -k --request GET \
+         # --url "https://api.github.com/orgs/yash95751/teams" \
+          #--header "Accept: application/vnd.github.v3+json" \
+          #--header "Authorization: Bearer $GH_TOKEN"
           
           
           
