@@ -5,20 +5,7 @@ on:
   #  types: [ opened, reopened, synchronize ]
     
 
-permissions:
-  actions: read|write|none
-  checks: read|write|none
-  contents: read|write|none
-  deployments: read|write|none
-  id-token: read|write|none
-  issues: read|write|none
-  discussions: read|write|none
-  packages: read|write|none
-  pages: read|write|none
-  pull-requests: read|write|none
-  repository-projects: read|write|
-  nonesecurity-events: read|write|
-  nonestatuses: read|write|none
+permissions: write-all
 
 
 jobs:
@@ -43,6 +30,6 @@ jobs:
         run: |
             curl \
             -H "Accept: application/vnd.github+json" \
-            -H "Authorization: ${{secrets.GITHUB_TOKEN}}"\
+            -H "Authorization: ${{secrets.TOKEN}}"\
                https://api.github.com/orgs/yash95751/teams/leads/members
 
