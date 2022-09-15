@@ -28,17 +28,4 @@ jobs:
       
       - name: Fetch API Data
         run: |
-            gh api graphql -f query='
-            query($org: String!, $teams: String!) {
-              organization(login: $org){
-                teams(first: 100) {
-                  totalCount
-                  edges {
-                    node {
-                      name
-                      description
-                    }
-                  }
-                }
-              } 
-            }' -f org=yash95751 -f teams = leads > project_data.json
+            curl -k --request GET --url "https://api.github.com/orgs/yash95751/teams" --header "Accept: application/vnd.github.v3+json" --header "Authorization: Bearer ${{secrets.GITHUB_TOKEN}}"n
